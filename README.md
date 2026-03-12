@@ -17,14 +17,14 @@ L'application affiche pour chaque phrase générée :
 Dans sa forme originale (papier), Diceware utilise **5 lancers d'un dé à 6 faces** pour sélectionner un mot. Chaque lancer produit un chiffre de 1 à 6, et les 5 chiffres concaténés forment une clé (ex. `42316`) qui pointe vers une entrée unique de la liste.
 
 ```
-Lancer 5 dés → 4  2  3  1  6 → clé "42316" → mot "cheval"
+Lancer 5 dés → 4  2  3  1  6 → clé "42316" → mot "longeait"
 ```
 
 La liste contient exactement 6⁵ = **7 776 mots**, ce qui garantit qu'une clé sur 5 chiffres (de `11111` à `66666`) correspond toujours à exactement un mot.
 
 ### Implémentation numérique
 
-Cette application reproduit ce tirage via **`crypto.getRandomValues()`** (Web Crypto API), qui fournit une source d'aléa cryptographiquement sûre. Pour chaque dé virtuel, un octet aléatoire est généré et ramené à une valeur entre 1 et 6 en utilisant un *rejection sampling* : les valeurs au-delà de 251 sont rejetées pour garantir une distribution parfaitement uniforme (évite le biais modulo).
+Cette application reproduit ce tirage via **`crypto.getRandomValues()`** (Web Crypto API), qui fournit une source d'aléa cryptographiquement sûre. Pour chaque dé virtuel, un octet aléatoire est généré et ramené à une valeur entre 1 et 6 en utilisant un _rejection sampling_ : les valeurs au-delà de 251 sont rejetées pour garantir une distribution parfaitement uniforme (évite le biais modulo).
 
 ```
 octet ∈ [0, 251] → valeur = (octet % 6) + 1   ✓ distribution uniforme
@@ -33,12 +33,12 @@ octet ∈ [252, 255] → rejeté, on retire           ✗ évite le biais
 
 ## Stack technique
 
-| Outil | Rôle |
-|---|---|
-| [Svelte 5](https://svelte.dev/) | Framework UI |
-| [TypeScript](https://www.typescriptlang.org/) | Typage statique |
-| [Vite](https://vitejs.dev/) | Bundler / dev server |
-| [Vitest](https://vitest.dev/) | Tests unitaires |
+| Outil                                         | Rôle                 |
+| --------------------------------------------- | -------------------- |
+| [Svelte 5](https://svelte.dev/)               | Framework UI         |
+| [TypeScript](https://www.typescriptlang.org/) | Typage statique      |
+| [Vite](https://vitejs.dev/)                   | Bundler / dev server |
+| [Vitest](https://vitest.dev/)                 | Tests unitaires      |
 
 ## Installation
 
@@ -77,12 +77,12 @@ npm run test:coverage
 
 Les seuils sont établis à partir d'un modèle d'attaque réaliste pour 2026 : **100 milliards de tentatives par seconde**, ce qui correspond approximativement à un cluster de 5 GPU RTX 4090 attaquant un hash SHA-256 avec [Hashcat](https://hashcat.net/).
 
-| Niveau | Bits | Mots | Temps estimé |
-|---|---|---|---|
-| Faible | < 63 bits | 3–4 mots | Quelques heures |
-| Bon | 63–77 bits | 5 mots | ~4.5 ans |
-| Fort | 77–92 bits | 6–7 mots | 35 000 ans → 272 millions d'années |
-| Très fort | ≥ 92 bits | 8+ mots | Plusieurs billions d'années |
+| Niveau    | Bits       | Mots     | Temps estimé                       |
+| --------- | ---------- | -------- | ---------------------------------- |
+| Faible    | < 63 bits  | 3–4 mots | Quelques heures                    |
+| Bon       | 63–77 bits | 5 mots   | ~4.5 ans                           |
+| Fort      | 77–92 bits | 6–7 mots | 35 000 ans → 272 millions d'années |
+| Très fort | ≥ 92 bits  | 8+ mots  | Plusieurs billions d'années        |
 
 ### Sources
 
