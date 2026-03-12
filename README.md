@@ -14,7 +14,7 @@ L'application affiche pour chaque phrase générée :
 
 ## Comment fonctionne le tirage
 
-Dans sa forme originale (papier), Diceware utilise **5 lancers d'un dé à 6 faces** pour sélectionner un mot. Chaque lancer produit un chiffre de 1 à 6, et les 5 chiffres concaténés forment une clé (ex. `42316`) qui pointe vers une entrée unique de la liste.
+Dans sa forme originale, Diceware utilise **5 lancers d'un dé à 6 faces** pour sélectionner un mot. Chaque lancer produit un chiffre de 1 à 6, et les 5 chiffres concaténés forment une clé (ex. `42316`) qui pointe vers une entrée unique de la liste.
 
 ```
 Lancer 5 dés → 4  2  3  1  6 → clé "42316" → mot "longeait"
