@@ -268,6 +268,55 @@ input[type="number"]:focus {
   color: var(--couleur-texte-doux);
 }
 
+.about {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon);
+  padding: 1.5rem;
+  box-shadow: var(--ombre);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--couleur-texte);
+  letter-spacing: -0.01em;
+}
+
+.about p {
+  font-size: 0.9rem;
+  color: var(--couleur-texte-doux);
+  line-height: 1.7;
+}
+
+.about strong {
+  color: var(--couleur-texte);
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq dt {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--couleur-texte);
+}
+
+.faq dd {
+  font-size: 0.85rem;
+  color: var(--couleur-texte-doux);
+  line-height: 1.6;
+  margin-left: 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--couleur-primaire);
+}
+
 footer {
   text-align: center;
   font-size: 0.8rem;

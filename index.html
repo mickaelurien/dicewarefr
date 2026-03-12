@@ -1,10 +1,99 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dicewarefr</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Titre & description -->
+    <title>Diceware FR — Générateur de phrases de passe sécurisées en français</title>
+    <meta name="description" content="Générez des phrases de passe longues et mémorables avec la méthode Diceware en français. Mot de passe aléatoire, sécurisé, 100% côté client — aucune donnée envoyée." />
+    <meta name="keywords" content="diceware, diceware français, générateur de mot de passe, générateur passphrase, phrase de passe, mot de passe sécurisé, password generator, passphrase generator, mot de passe aléatoire" />
+    <meta name="author" content="Diceware FR" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- URL canonique -->
+    <link rel="canonical" href="https://dicewarefr.fr/" />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp…) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dicewarefr.fr/" />
+    <meta property="og:title" content="Diceware FR — Générateur de phrases de passe sécurisées" />
+    <meta property="og:description" content="Générez des phrases de passe longues et mémorables avec la méthode Diceware en français. 100% côté client, aucune donnée envoyée." />
+    <meta property="og:image" content="https://dicewarefr.fr/og-image.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Diceware FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Diceware FR — Générateur de phrases de passe sécurisées" />
+    <meta name="twitter:description" content="Générez des phrases de passe longues et mémorables avec la méthode Diceware en français. 100% côté client." />
+    <meta name="twitter:image" content="https://dicewarefr.fr/og-image.png" />
+
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Diceware FR",
+      "url": "https://dicewarefr.fr/",
+      "description": "Générateur de phrases de passe sécurisées en français basé sur la méthode Diceware. Génération 100% locale, aucune donnée transmise.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "fr-FR",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "featureList": [
+        "Génération de phrases de passe Diceware",
+        "Liste de mots française",
+        "Calcul d'entropie",
+        "100% côté client",
+        "Aucune donnée envoyée"
+      ]
+    }
+    </script>
+
+    <!-- FAQ structurée JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que la méthode Diceware ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diceware est une méthode de génération de phrases de passe utilisant des mots aléatoires issus d'une liste prédéfinie. Chaque mot est sélectionné par un tirage aléatoire cryptographique, garantissant une sécurité élevée."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les phrases de passe générées sont-elles sécurisées ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. La génération est réalisée 100% côté client via l'API Web Crypto du navigateur. Aucune phrase de passe n'est jamais envoyée à un serveur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de mots faut-il pour un mot de passe sécurisé ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5 mots Diceware offrent environ 64 bits d'entropie, 6 mots environ 77 bits. Pour une sécurité maximale contre les attaques modernes, 6 mots ou plus sont recommandés."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>
